@@ -2,11 +2,21 @@ window.onload = function () {
 
   const yesBtn = document.getElementById("yes");
   const noBtn = document.getElementById("no");
-  const title = document.querySelector("h1"); // safer
+  const title = document.querySelector("h1");
+  const question = document.getElementById("question");
+  const buttons = document.getElementById("buttons");
 
   yesBtn.onclick = function () {
-    title.innerText = "Yayyy ❤️ I love you so much!";
-    startHearts();
+
+    // Change heading
+    title.innerText = "❤️Happy Valentines Day❤️ I love you so much!";
+
+    // Hide question + buttons
+    question.style.display = "none";
+    buttons.style.display = "none";
+
+    // Start hearts
+    setInterval(createHeart, 300);
   };
 
   noBtn.onmouseover = function () {
@@ -14,10 +24,6 @@ window.onload = function () {
     noBtn.style.left = Math.random() * 80 + "%";
     noBtn.style.top = Math.random() * 80 + "%";
   };
-
-  function startHearts() {
-    setInterval(createHeart, 300);
-  }
 
   function createHeart() {
     const heart = document.createElement("div");
