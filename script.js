@@ -2,17 +2,16 @@ const yesBtn = document.getElementById("yes");
 const noBtn = document.getElementById("no");
 const title = document.getElementById("title");
 
-yesBtn.addEventListener("click", () => {
+yesBtn.onclick = function () {
   title.innerText = "Yayyy ❤️ I love you so much!";
 
-  // Create hearts continuously
   setInterval(createHeart, 300);
-});
+};
 
 function createHeart() {
   const heart = document.createElement("div");
-  heart.classList.add("heart");
-  heart.innerText = "❤️";
+  heart.className = "heart";
+  heart.innerHTML = "❤️";
 
   heart.style.left = Math.random() * 100 + "vw";
 
@@ -23,8 +22,8 @@ function createHeart() {
   }, 4000);
 }
 
-noBtn.addEventListener("mouseover", () => {
+noBtn.onmouseover = function () {
   noBtn.style.position = "absolute";
   noBtn.style.left = Math.random() * 80 + "%";
   noBtn.style.top = Math.random() * 80 + "%";
-});
+};
