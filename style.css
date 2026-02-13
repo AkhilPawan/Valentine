@@ -1,21 +1,35 @@
 body {
-  background: pink;
+  margin: 0;
+  background: linear-gradient(#ff9a9e, #fad0c4);
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: sans-serif;
+  font-family: Arial;
 }
 
 .container {
   text-align: center;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 42px;
+}
+
+p {
+  font-size: 26px;
+}
+
+.buttons {
+  margin-top: 30px;
 }
 
 button {
-  padding: 15px 30px;
-  font-size: 20px;
-  margin: 10px;
-  border-radius: 10px;
+  padding: 20px 40px;
+  font-size: 22px;
+  margin: 15px;
+  border-radius: 15px;
   border: none;
   cursor: pointer;
 }
@@ -27,4 +41,21 @@ button {
 
 #no {
   background: white;
+}
+
+/* Mobile optimization */
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 36px;
+  }
+
+  p {
+    font-size: 24px;
+  }
+
+  button {
+    width: 80%;
+    font-size: 24px;
+  }
 }
