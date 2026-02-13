@@ -1,29 +1,36 @@
-const yesBtn = document.getElementById("yes");
-const noBtn = document.getElementById("no");
-const title = document.getElementById("title");
+window.onload = function () {
 
-yesBtn.onclick = function () {
-  title.innerText = "Yayyy ❤️ I love you so much!";
+  const yesBtn = document.getElementById("yes");
+  const noBtn = document.getElementById("no");
+  const title = document.querySelector("h1"); // safer
 
-  setInterval(createHeart, 300);
-};
+  yesBtn.onclick = function () {
+    title.innerText = "Yayyy ❤️ I love you so much!";
+    startHearts();
+  };
 
-function createHeart() {
-  const heart = document.createElement("div");
-  heart.className = "heart";
-  heart.innerHTML = "❤️";
+  noBtn.onmouseover = function () {
+    noBtn.style.position = "absolute";
+    noBtn.style.left = Math.random() * 80 + "%";
+    noBtn.style.top = Math.random() * 80 + "%";
+  };
 
-  heart.style.left = Math.random() * 100 + "vw";
+  function startHearts() {
+    setInterval(createHeart, 300);
+  }
 
-  document.body.appendChild(heart);
+  function createHeart() {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "❤️";
 
-  setTimeout(() => {
-    heart.remove();
-  }, 4000);
-}
+    heart.style.left = Math.random() * 100 + "vw";
 
-noBtn.onmouseover = function () {
-  noBtn.style.position = "absolute";
-  noBtn.style.left = Math.random() * 80 + "%";
-  noBtn.style.top = Math.random() * 80 + "%";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+      heart.remove();
+    }, 4000);
+  }
+
 };
