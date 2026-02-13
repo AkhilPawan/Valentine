@@ -8,16 +8,18 @@ window.onload = function () {
 
   yesBtn.onclick = function () {
 
-    // Change heading
-    title.innerText = "❤️Happy Valentines Day❤️ I love you so much!";
+  title.innerText = "Yayyy ❤️ I love you so much!";
 
-    // Hide question + buttons
-    question.style.display = "none";
-    buttons.style.display = "none";
+  question.style.display = "none";
+  buttons.style.display = "none";
 
-    // Start hearts
-    setInterval(createHeart, 300);
-  };
+  // Change background image
+  document.body.style.background = "url('bg.jpg')";
+  document.body.style.backgroundSize = "cover";
+  document.body.style.backgroundPosition = "center";
+
+  setInterval(createHeart, 300);
+};
 
   noBtn.onmouseover = function () {
     noBtn.style.position = "absolute";
@@ -40,3 +42,4 @@ window.onload = function () {
   }
 
 };
+
