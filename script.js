@@ -2,13 +2,14 @@ window.onload = function () {
 
   const yesBtn = document.getElementById("yes");
   const noBtn = document.getElementById("no");
-  const title = document.querySelector("h1");
+  const title = document.querySelector("#message-box h1");
+  const messageBox = document.getElementById("message-box");
   const question = document.getElementById("question");
   const buttons = document.getElementById("buttons");
 
   yesBtn.onclick = function () {
 
-  title.innerText = "Yayyy ❤️ I love you so much!";
+  title.innerText = "Happy Valentines Day Madhu❤️ I love you so much!";
 
   question.style.display = "none";
   buttons.style.display = "none";
@@ -42,4 +43,5 @@ window.onload = function () {
   }
 
 };
+
 
